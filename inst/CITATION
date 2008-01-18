@@ -1,0 +1,16 @@
+citHeader("To cite HapMap in publications use:")
+
+citEntry(entry = "article",
+	 title = "The International HapMap Project",
+	 author = "The HapMap Consortium",
+	 year = 2003,
+	 url = "http://www.nature.com/nature/journal/v426/n6968/abs/nature02168.html",
+	 jornal = "Nature",
+	 pages = "789--796",
+	 volume = 426,
+	 textVersion =
+	"The International HapMap Consortium. The International HapMap Project. Nature 426, 789-796 (2003)."
+)
+
+citFooter("The HapMap Consortium invested lots of effort",
+	  "in generating these data. Please cite it.")
