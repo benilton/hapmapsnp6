@@ -1,10 +1,10 @@
 Package: hapmapsnp6
-Type: Package
 Title: Sample data - Hapmap SNP 5.0 Affymetrix
-Version: 1.3
+Version: 1.3.1
 Date: 2008-01-18
 Author: Hapmap Consortium
 Suggests: oligo
 Maintainer: Benilton Carvalho <bcarvalh@jhsph.edu>
 Description: Sample dataset obtained from http://www.hapmap.org
+biocViews: ExperimentData
 License: GPL
