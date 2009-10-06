@@ -1,6 +1,6 @@
 Package: hapmapsnp6
 Title: Sample data - Hapmap SNP 5.0 Affymetrix
-Version: 1.3.2
+Version: 1.3.3
 Date: 2008-01-18
 Author: Hapmap Consortium
 Suggests: oligo
