@@ -1,4 +1,4 @@
-.First.lib <- function(libname, pkgname) {
+.onLoad <- function(libname, pkgname) {
   message(paste("/-------------------------------------------\\",
                 "|         SAMPLE HAPMAP SNP 6.0             |",
                 "|-------------------------------------------|",
