@@ -1,6 +1,6 @@
 Package: hapmapsnp6
 Title: Sample data - Hapmap SNP 6.0 Affymetrix
-Version: 1.18.0
+Version: 1.19.0
 Author: Hapmap Consortium
 Depends: R (>= 2.15)
 Suggests: oligo, oligoClasses
