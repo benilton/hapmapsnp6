@@ -1,0 +1,108 @@
+---
+title: "Sample HapMap SNP 6.0 data"
+author: "Benilton Carvalho"
+package: hapmapsnp6
+output:
+  BiocStyle::html_document:
+    toc: true
+vignette: >
+  %\VignetteIndexEntry{Sample HapMap SNP 6.0 data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+library(hapmapsnp6)
+```
+
+# What this package provides
+
+`hapmapsnp6` distributes a small sample of HapMap data generated on the
+Affymetrix Genome-Wide Human SNP Array 6.0. It exists so that other
+Bioconductor packages have a realistic dataset to demonstrate on, and it is
+not meant for analysis in its own right.
+
+Four resources are provided. Three are the raw CEL files for the HapMap
+samples NA06985, NA06991 and NA06993. The fourth, `crlmmResult`, is the
+genotype calling result obtained from those three files.
+
+# Where the data lives
+
+As of version 1.55.1 the data is no longer shipped inside the package.
+It is deposited on Zenodo, under the DOI
+[10.5281/zenodo.23990454](https://doi.org/10.5281/zenodo.23990454),
+and served through `r Biocpkg("ExperimentHub")`.
+
+The first call to any accessor downloads the resource and stores it in the
+local ExperimentHub cache. Later calls read from that cache, so the download
+cost is paid once per machine.
+
+The chunks below query ExperimentHub and therefore need network access the
+first time they run. The resources are registered under the identifiers
+`EH10670` to `EH10673`. Once they are in the local cache, the vignette builds
+without further downloads.
+
+# Accessing the genotype calls
+
+Earlier versions of this package shipped the object in `data/`, so it was
+loaded with `data(crlmmResult)`. That call no longer works, because the
+package ships no data directory. The accessor replaces it:
+
+```{r accessor}
+library(hapmapsnp6)
+crlmmResult <- crlmmResult()
+class(crlmmResult)
+```
+
+Resource metadata can be inspected without downloading the object, which is
+useful in examples and tests that must not depend on the network:
+
+```{r metadata}
+crlmmResult(metadata = TRUE)
+```
+
+# Accessing the CEL files
+
+`celFiles()` returns the paths of the three CEL files on disk, named after
+the original files:
+
+```{r cels}
+cels <- celFiles()
+basename(cels)
+```
+
+Code written against earlier versions of this package located the files with
+`system.file("celFiles", package = "hapmapsnp6")`. That call cannot work for
+files which are no longer installed with the package. The closest equivalent
+returns a directory holding the three files:
+
+```{r celdir}
+dir <- celFiles(asDir = TRUE)
+list.files(dir)
+```
+
+# Listing every resource
+
+All resources carried by this package can be listed through ExperimentHub:
+
+```{r listing}
+library(ExperimentHub)
+listResources(ExperimentHub(), "hapmapsnp6")
+```
+
+# Provenance and citation
+
+The origin of the data and the processing that produced `crlmmResult` are
+documented in `inst/scripts/make-data.R`. The International HapMap Project
+invested considerable effort in generating these data; please cite it, as
+recorded in `inst/CITATION`.
+
+```{r citation}
+citation("hapmapsnp6")
+```
+
+# Session information
+
+```{r session}
+sessionInfo()
+```

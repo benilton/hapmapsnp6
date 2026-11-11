@@ -1,10 +1,23 @@
 Package: hapmapsnp6
 Title: Sample data - Hapmap SNP 6.0 Affymetrix
-Version: 1.55.0
-Author: Hapmap Consortium
-Depends: R (>= 2.15)
-Suggests: oligo, oligoClasses
-Maintainer: Benilton Carvalho <Benilton.Carvalho@cancer.org.uk>
-Description: Sample dataset obtained from http://www.hapmap.org
-biocViews: ExperimentData, HapMap, SNPData
+Authors@R: c(
+    person("Benilton", "Carvalho", role = c("aut", "cre"),
+           email = "benilton@unicamp.br",
+           comment = c(ORCID = "0000-0001-5122-5646")),
+    person("The International HapMap Consortium", role = "dtc"))
+Version: 1.55.1
+Depends: R (>= 4.6.0), ExperimentHub, Biobase
+Suggests: oligo, oligoClasses, knitr, rmarkdown, BiocStyle, testthat
+Description: Sample data from the International HapMap Project,
+    generated on the Affymetrix Genome-Wide Human SNP Array 6.0 for the
+    samples NA06985, NA06991 and NA06993. The package provides the three
+    CEL files and the genotype calling result obtained from them with the
+    crlmm algorithm. The data are hosted on Zenodo and served through
+    ExperimentHub, and are intended only for demonstrating Bioconductor
+    tools.
+biocViews: ExperimentData, HapMap, SNPData, ExperimentHub, Genome
 License: GPL
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+URL: https://github.com/Bioconductor/hapmapsnp6
+BugReports: https://github.com/Bioconductor/hapmapsnp6/issues

@@ -1,16 +1,22 @@
 citHeader("To cite HapMap in publications use:")
 
-citEntry(entry = "article",
-	 title = "The International HapMap Project",
-	 author = "The HapMap Consortium",
-	 year = 2003,
-	 url = "http://www.nature.com/nature/journal/v426/n6968/abs/nature02168.html",
-	 journal = "Nature",
-	 pages = "789--796",
-	 volume = 426,
-	 textVersion =
-	"The International HapMap Consortium. The International HapMap Project. Nature 426, 789-796 (2003)."
+bibentry(
+    bibtype = "Article",
+    title   = "The International HapMap Project",
+    author  = person(family = "The International HapMap Consortium"),
+    journal = "Nature",
+    year    = 2003,
+    volume  = 426,
+    number  = 6968,
+    pages   = "789--796",
+    doi     = "10.1038/nature02168",
+    textVersion = paste(
+        "The International HapMap Consortium.",
+        "The International HapMap Project.",
+        "Nature 426, 789-796 (2003).",
+        "doi:10.1038/nature02168"
+    )
 )
 
-citFooter("The HapMap Consortium invested lots of effort",
-	  "in generating these data. Please cite it.")
+citFooter("The International HapMap Project invested considerable effort",
+          "in generating these data. Please cite it.")

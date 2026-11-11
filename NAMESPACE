@@ -1,1 +1,4 @@
 exportPattern(".")
+import(ExperimentHub)
+export(crlmmResult)
+export(celFiles)

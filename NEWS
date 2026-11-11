@@ -1,0 +1,40 @@
+CHANGES IN VERSION 1.55.1
+-------------------------
+
+    o The data is no longer distributed inside the package. It is deposited
+      on Zenodo (doi:10.5281/zenodo.23990454) and served through
+      ExperimentHub, which brings the source tarball down from 264 MB to a
+      few kilobytes.
+
+    o USER VISIBLE CHANGE: data(crlmmResult) no longer works, because the
+      package ships no data directory. Use crlmmResult() instead, which
+      returns the same SnpSet. The first call downloads the object and
+      stores it in the local ExperimentHub cache; later calls read from
+      that cache.
+
+          ## before
+          data(crlmmResult)
+
+          ## now
+          crlmmResult <- crlmmResult()
+
+    o USER VISIBLE CHANGE: the three CEL files are now obtained through
+      celFiles(), which returns their paths on disk. Code that used
+      system.file("celFiles", package = "hapmapsnp6") should use
+      celFiles(asDir = TRUE), which returns a directory holding the files.
+
+          ## before
+          path <- system.file("celFiles", package = "hapmapsnp6")
+          cels <- list.celfiles(path, full.names = TRUE)
+
+          ## now
+          cels <- celFiles()
+
+    o crlmmResult(metadata = TRUE) and celFiles(metadata = TRUE) return the
+      resource metadata without downloading anything.
+
+    o Both accessors pass further arguments on to ExperimentHub(), so that
+      an alternate hub location can be used.
+
+    o The maintainer address was updated, and authorship now uses the
+      Authors@R field.
